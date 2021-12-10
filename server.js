@@ -7,7 +7,7 @@ const path = require('path');
 const dotenv = require('dotenv');
 dotenv.config({path:'./.env'});
 
-import indexRoutes from './server/index.js';
+const indexRoutes = require('./server/index.js');
 
 const CONNECTION_URL = process.env.CONNECTION_URL       // process.env.REACT_APP_CONNECTION_URL
 // console.log(process.env.REACT_APP_CONNECTION_URL)
