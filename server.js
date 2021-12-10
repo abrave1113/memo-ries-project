@@ -27,9 +27,9 @@ app.options('/', (req, res, next) => {
 
 app.use('/', indexRoutes)
 
-// app.get('/exp_backend', (req, res) => {
-//     res.redirect('/server/index');
-// })
+app.get('/', (req, res) => {
+    res.redirect('/');
+})
 
 const PORT = process.env.PORT || 8080;
 
