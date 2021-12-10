@@ -1,5 +1,5 @@
 {
-  "name": "memories_project",
+  "name": "memo-ries-project",
   "version": "1.0.0",
   "main": "./server/index.js",
   "scripts": {
@@ -7,14 +7,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/abrave1113/memories_project.git"
+    "url": "git+https://github.com/abrave1113/memo-ries-project.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/abrave1113/memories_project/issues"
+    "url": "https://github.com/abrave1113/memo-ries-project/issues"
   },
-  "homepage": "https://github.com/abrave1113/memories_project#readme",
+  "homepage": "https://github.com/abrave1113/memo-ries-project#readme",
   "devDependencies": {
     "concurrently": "^6.4.0",
     "nodemon": "^2.0.15"

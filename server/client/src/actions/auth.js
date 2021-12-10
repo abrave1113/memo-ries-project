@@ -1,9 +1,10 @@
 import { AUTH } from '../constants/actionTypes';
-import * as api from '../api/index.js';
+// import * as api from '../api/index.js';
+import { axiosInstance } from '../config';
 
 export const signin = (formData, history) => async (dispatch) => {
     try {
-        const { data } = await api.signIn(formData);
+        const { data } = await axiosInstance.signIn(formData);
 
         dispatch({ type: AUTH, data });
 
@@ -15,7 +16,7 @@ export const signin = (formData, history) => async (dispatch) => {
 
 export const signup = (formData, history) => async (dispatch) => {
     try {
-        const { data } = await api.signUp(formData);
+        const { data } = await axiosInstance.signUp(formData);
         
         dispatch({ type: AUTH, data });
         
