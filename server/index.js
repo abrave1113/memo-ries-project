@@ -15,7 +15,7 @@ const router = express.Router();
 router.use(express.static("client/build"));
 
 router.get('*', (req, res) => {
-  res.sendFile('client/build', 'index.html');
+  res.sendFile('./client/build', 'index.html');
 });
 
 router.options('/', (req, res, next) => {
