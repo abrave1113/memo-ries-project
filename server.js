@@ -10,6 +10,7 @@ import indexRoutes from './server/index.js';
 
 const CONNECTION_URL = process.env.CONNECTION_URL       // process.env.REACT_APP_CONNECTION_URL
 // console.log(process.env.REACT_APP_CONNECTION_URL)
+const app = express()
 
 app.use(bodyParser.json({limit:"30mb", extended: true} ));
 app.use(bodyParser.urlencoded({limit:"30mb", extended: true} ));
