@@ -1,13 +1,12 @@
-const express = require('express');
-// import express from 'express';
-const bodyParser = require('body-parser');
-const mongoose = require('mongoose');
-const cors = require('cors');
-const path = require('path');
-const dotenv = require('dotenv');
+import express from 'express';
+import bodyParser from 'body-parser';
+import mongoose from 'mongoose';
+import cors from 'cors';
+import path from 'path';
+import dotenv from 'dotenv';
 dotenv.config({path:'./.env'});
 
-const indexRoutes = require('./server/index.js');
+import indexRoutes from './server/index.js';
 
 const CONNECTION_URL = process.env.CONNECTION_URL       // process.env.REACT_APP_CONNECTION_URL
 // console.log(process.env.REACT_APP_CONNECTION_URL)
