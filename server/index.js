@@ -2,9 +2,12 @@ import express from 'express';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
 import cors from 'cors';
-import {__dirname} from 'path';
 import dotenv from 'dotenv';
 dotenv.config({path: './.env'});
+
+import path from 'path';
+const __dirname = path.resolve();
+
 
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/user.js';
