@@ -8,7 +8,7 @@ dotenv.config({path:'./.env'});
 
 import indexRoutes from './server/index.js';
 
-const CONNECTION_URL = process.env.REACT_APP_CONNECTION_URL       // process.env.REACT_APP_CONNECTION_URL
+const CONNECTION_URL = process.env.CONNECTION_URL       // process.env.REACT_APP_CONNECTION_URL
 // console.log(process.env.REACT_APP_CONNECTION_URL)
 
 app.use(bodyParser.json({limit:"30mb", extended: true} ));
