@@ -15,7 +15,7 @@ import userRoutes from './routes/user.js';
 const router = express.Router();
 // dotenv.config({path:'./.env'})
 
-router.use(express.static(path.join(__dirname, "/client")));
+router.use(express.static("./client/public"));
 
 router.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, '/client/public', '/index.html'));
