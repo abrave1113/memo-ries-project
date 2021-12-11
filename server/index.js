@@ -15,10 +15,10 @@ import userRoutes from './routes/user.js';
 const router = express.Router();
 // dotenv.config({path:'./.env'})
 
-router.use(express.static("client/build"));
+router.use(express.static(__dirname, "/client"));
 
 router.get('*', (req, res) => {
-  res.sendFile(__dirname + '/client/build' + '/index.html');
+  res.sendFile(__dirname, '/client/build', '/index.html');
 });
 
 router.options('/', (req, res, next) => {

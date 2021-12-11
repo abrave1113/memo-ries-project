@@ -1,4 +1,5 @@
 import express from 'express';
+import bodyParser from 'body-parser';
 
 import { getPosts, createPost, updatePost, likePost, deletePost } from '../controllers/posts.js';
 import auth from '../middleware/auth.js';
