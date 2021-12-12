@@ -27,6 +27,7 @@ router.use('/posts', postRoutes);
 router.use('/user', userRoutes);
 
 router.get('/', (req, res) => {
+    console.log(__dirname)
     res.sendFile(path.join(__dirname, '/client/public', '/index.html'));
   });
 
