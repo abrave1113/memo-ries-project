@@ -25,10 +25,10 @@ app.options('/', (req, res, next) => {
     next()
 });
 
-app.use('/', indexRoutes)
+app.use('/home', indexRoutes)
 
 app.get('/', (req, res) => {
-    res.redirect('/');
+    res.redirect('/home');
 })
 
 const PORT = process.env.PORT || 8080;
