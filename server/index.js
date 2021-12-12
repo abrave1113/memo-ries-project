@@ -36,4 +36,4 @@ router.get('/', (req, res) => {
 //     res.send('Hello to Memories API');
 // })
 
-export default router;
+module.exports = router;

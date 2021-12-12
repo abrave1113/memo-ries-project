@@ -16,4 +16,4 @@ router.use('/', (req, res, next) => {
 router.post('/signin', signin);
 router.post('/signup', signup);
 
-export default router;
+module.exports = router;
