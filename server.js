@@ -29,7 +29,13 @@ app.options('/', (req, res, next) => {
 app.use('/home', indexRoutes)
 
 app.get('*', (req, res) => {
-    res.redirect('/home');
+    try {
+        console.log(req.get('Referrer'))    
+        res.redirect('/home');
+    }
+    catch (error) {
+        console.log(error)
+    }
 })
 
 const PORT = process.env.PORT || 8080;
