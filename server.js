@@ -12,8 +12,8 @@ const CONNECTION_URL = process.env.CONNECTION_URL       // process.env.REACT_APP
 // console.log(process.env.REACT_APP_CONNECTION_URL)
 const app = express()
 
-app.use(bodyParser.json({limit:"30mb", extended: true} ));
-app.use(bodyParser.urlencoded({limit:"30mb", extended: true} ));
+app.use(bodyParser.json({limit:"100mb", extended: true} ));
+app.use(bodyParser.urlencoded({limit:"100mb", extended: true} ));
 app.use(cors());
 app.use(express.static(".server/client/public"));
 
