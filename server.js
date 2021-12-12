@@ -34,7 +34,7 @@ app.get('*', (req, res) => {
         res.redirect('/home');
     }
     catch (error) {
-        console.log(error)
+        console.log('Sorry, connection error.' + error.message)
     }
 })
 
