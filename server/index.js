@@ -17,10 +17,6 @@ const router = express.Router();
 
 router.use(express.static("./client/public"));
 
-router.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '/client/public', '/index.html'));
-});
-
 router.options('/', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS, PATCH');
@@ -31,6 +27,10 @@ router.options('/', (req, res, next) => {
 });
 router.use('/posts', postRoutes);
 router.use('/user', userRoutes);
+
+router.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '/client/public', '/index.html'));
+  });
 
 // router.get('/', (req, res) => {
 //     res.send('Hello to Memories API');

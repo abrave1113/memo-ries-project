@@ -27,7 +27,7 @@ app.options('/', (req, res, next) => {
 
 app.use('/home', indexRoutes)
 
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
     res.redirect('/home');
 })
 
