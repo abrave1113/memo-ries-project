@@ -3,6 +3,8 @@ import bodyParser from 'body-parser';
 
 import { getPosts, createPost, updatePost, likePost, deletePost } from '../controllers/posts.js';
 import auth from '../middleware/auth.js';
+import home from '../index.js';
+import user from './user.js';
 
 const router = express.Router();
 
@@ -21,4 +23,4 @@ router.patch('/:id', auth, updatePost);
 router.delete('/:id', auth, deletePost);
 router.patch('/:id/likePost', auth, likePost );
 
-module.exports = router;
+export default router;

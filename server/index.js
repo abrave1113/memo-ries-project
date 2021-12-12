@@ -15,8 +15,6 @@ import userRoutes from './routes/user.js';
 const router = express.Router();
 // dotenv.config({path:'./.env'})
 
-router.use(express.static("./client/public"));
-
 router.options('/', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS, PATCH');
@@ -36,4 +34,4 @@ router.get('/', (req, res) => {
 //     res.send('Hello to Memories API');
 // })
 
-module.exports = router;
+export default router;
