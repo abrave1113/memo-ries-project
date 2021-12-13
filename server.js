@@ -32,14 +32,12 @@ app.options('/', (req, res, next) => {
     next()
 });
 
-app.use('/api', './')
-
 app.use('/api/home', indexRoutes)
 
 app.get('*', (req, res) => {
     try {
         console.log(req.get('Referrer'))    
-        res.redirect('/api/home');
+        res.redirect('/home');
     }
     catch (error) {
         console.log('Sorry, connection error.' + error.message)
