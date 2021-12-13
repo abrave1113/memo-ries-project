@@ -20,7 +20,7 @@ app.use(express.static('./server/client'));
 
 app.get('*', (req, res) => {
     // console.log(__dirname)
-    res.sendFile('./server/client/build/index.html');
+    res.sendFile(path.join(__dirname, '/server', '/client', '/build', 'index.html'));
   });
 
 app.options('/', (req, res, next) => {
