@@ -6,9 +6,6 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 dotenv.config({path: './.env'});
 
-const __dirname = path.resolve();
-
-
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/user.js';
 
