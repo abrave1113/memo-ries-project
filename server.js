@@ -15,7 +15,13 @@ const app = express()
 app.use(bodyParser.json({limit:"100mb", extended: true} ));
 app.use(bodyParser.urlencoded({limit:"100mb", extended: true} ));
 app.use(cors());
-app.use(express.static("./server/client/public"));
+
+app.use(express.static(path.join(__dirname, '/server', '/client')));
+
+app.get('*', (req, res) => {
+    // console.log(__dirname)
+    res.sendFile(path.join(__dirname, '/server', '/client/build', 'index.html'));
+  });
 
 app.options('/', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');

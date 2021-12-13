@@ -26,11 +26,6 @@ router.options('/', (req, res, next) => {
 router.use('/posts', postRoutes);
 router.use('/user', userRoutes);
 
-router.get('/', (req, res) => {
-    console.log(__dirname)
-    res.sendFile(path.join(__dirname, '/server', '/client', '/public', '/index.html'));
-  });
-
 // router.get('/', (req, res) => {
 //     res.send('Hello to Memories API');
 // })
