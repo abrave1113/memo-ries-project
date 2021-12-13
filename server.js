@@ -32,6 +32,8 @@ app.options('/', (req, res, next) => {
     next()
 });
 
+app.use('/api', './')
+
 app.use('/api/home', indexRoutes)
 
 app.get('*', (req, res) => {
