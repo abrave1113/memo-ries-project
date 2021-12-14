@@ -23,8 +23,18 @@ router.options('/', (req, res, next) => {
 router.use('/posts', postRoutes);
 router.use('/user', userRoutes);
 
-// router.get('/', (req, res) => {
-//     res.send('Hello to Memories API');
-// })
+router.get('/', (req, res, next) => {
+    console.log("At least part-way there.")// res.send('Hello to Memories API');
+    next()
+})
+
+router.use((error, req, res) => {
+  if (error) {
+    console.log('error from server routes');               /*'error from server routes'*/
+    res.send('error from server routes')
+  } else {
+    res.sendFile(path.join(__dirname, '/client', '/build', '/index.html'));
+  }
+})
 
 export default router;
