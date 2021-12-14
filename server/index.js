@@ -33,7 +33,7 @@ router.use((error, req, res) => {
     console.log('error from server routes');               /*'error from server routes'*/
     res.send('error from server routes')
   } else {
-    res.sendFile(path.join(__dirname, '/client', '/build', 'index.html'));
+    res.sendFile(path.join(__dirname, '/client', '/build', '/index.html'));
   }
 })
 
