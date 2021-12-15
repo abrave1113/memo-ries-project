@@ -12,6 +12,7 @@ import userRoutes from './routes/user.js';
 const app = express();
 dotenv.config();
 const __dirname = path.resolve(path.dirname(''))
+const CONNECTION_URL = process.env.CONNECTION_URL
 
 // const router = express.Router();
 // dotenv.config({path:'./.env'})
