@@ -3,7 +3,6 @@ import bodyParser from 'body-parser';
 
 import { getPosts, createPost, updatePost, likePost, deletePost } from '../controllers/posts.js';
 import auth from '../middleware/auth.js';
-import home from '../index.js';
 import user from './user.js';
 
 const router = express.Router();
