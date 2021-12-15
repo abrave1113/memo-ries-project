@@ -9,10 +9,20 @@ dotenv.config({path: './.env'});
 import postRoutes from './routes/posts.js';
 import userRoutes from './routes/user.js';
 
-const router = express.Router();
+const app = express();
+dotenv.config();
+
+// const router = express.Router();
 // dotenv.config({path:'./.env'})
 
-router.options('/', (req, res, next) => {
+app.use(bodyParser.json({limit:"30mb", extended: true} ));
+app.use(bodyParser.urlencoded({limit:"30mb", extended: true} ));
+app.use(cors());
+
+app.use('/posts', postRoutes);
+app.use('/user', userRoutes);
+
+app.options('/', (req, res, next) => {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS, PATCH');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Endpoint, Token');
@@ -20,21 +30,34 @@ router.options('/', (req, res, next) => {
     res.sendStatus(200);
     next()
 });
-router.use('/posts', postRoutes);
-router.use('/user', userRoutes);
+app.use('/posts', postRoutes);
+app.use('/user', userRoutes);
 
-router.get('/', (req, res, next) => {
-    console.log("At least part-way there.")// res.send('Hello to Memories API');
-    next()
-})
+app.use(express.static(path.join(__dirname, '/client', '/public')));
 
-router.use((error, req, res) => {
-  if (error) {
-    console.log('error from server routes');               /*'error from server routes'*/
-    res.send('error from server routes')
-  } else {
+app.get('*', (req, res) => {
+    // console.log(__dirname)
     res.sendFile(path.join(__dirname, '/client', '/build', '/index.html'));
-  }
+  });
+
+app.get('/', (req, res) => {
+    console.log("At least part-way there.")// res.send('Hello to Memories API');
+    res.send("At least part-way there.")
 })
 
-export default router;
+const PORT = process.env.PORT || 8080;
+
+mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
+.then(() => app.listen(PORT, () => console.log( `Server running on port: ${PORT}` )))
+.catch((error) => console.log(error.message));
+
+// app.use((error, req, res) => {
+//   if (error) {
+//     console.log('error from server routes');               /*'error from server routes'*/
+//     res.send('error from server routes')
+//   } else {
+//     res.sendFile(path.join(__dirname, '/client', '/build', '/index.html'));
+//   }
+// })
+
+// export default router;
