@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { axiosInstance } from '../config';
 
-const API = axiosInstance.create({ baseURL: 'https://memo-ries-project.herokuapp.com' });
+const API = axiosInstance.create({ baseURL: 'https://memo-ries-project.herokuapp.com/api' });
 
 API.interceptors.request.use((req) => {
     if(localStorage.getItem('profile')) {

@@ -35,7 +35,7 @@ app.options('/', (req, res, next) => {
 app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
-app.use(express.static(path.join(__dirname, '/client', '/public')));
+app.use(express.static(path.join(__dirname, '/client', '/build')));
 
 app.get('*', (req, res) => {
     // console.log(__dirname)
