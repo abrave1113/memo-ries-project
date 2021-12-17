@@ -29,17 +29,19 @@ app.options('/', (req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS, PATCH');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Endpoint, Token');
     res.header('Access-Control-Allow-Credentials', true);
-    res.sendStatus(200);
+    // res.sendStatus(200);
     next()
 });
 app.use('/posts', postRoutes);
 app.use('/user', userRoutes);
 
-app.use(express.static(path.join(__dirname, '/client', '/build')));
+if(process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, 'client', 'build')));  
+}
 
 app.get('*', (req, res) => {
     // console.log(__dirname)
-    res.sendFile(path.join(__dirname, '/client', '/build', '/index.html'));
+    res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
   });
 
 app.get('/', (req, res) => {
