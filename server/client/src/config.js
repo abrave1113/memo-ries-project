@@ -1,5 +1,5 @@
-import axios from "axios"
+// import axios from "axios"
 
-export const axiosInstance = axios.create({
-    baseURL: "https://memo-ries-project.herokuapp.com/api"
-})
+// export const axiosInstance = axios.create({
+//     baseURL: "https://memo-ries-project.herokuapp.com/api"
+// })
