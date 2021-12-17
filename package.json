@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "./server/index.js",
   "type": "module",
+  "engines": {
+    "node": "16.13.0"
+  },
   "scripts": {
     "start": "cd server && node index.js",
     "heroku-postbuild": "cd server && cd client && npm install && npm run build"
@@ -16,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/abrave1113/memo-ries-project/issues"
   },
-  "homepage": "https://github.com/abrave1113/memo-ries-project",
+  "homepage": "https://github.com/abrave1113/memo-ries-project/api",
   "devDependencies": {
     "concurrently": "^6.4.0",
     "nodemon": "^2.0.15"
