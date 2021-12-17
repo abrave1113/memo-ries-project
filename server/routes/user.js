@@ -9,7 +9,7 @@ router.use('/', (req, res, next) => {
     res.header('Access-Control-Allow-Methods', 'GET, PUT, POST, DELETE, OPTIONS, PATCH');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Endpoint, Token');
     res.header('Access-Control-Allow-Credentials', true);
-    res.sendStatus(200);
+    // res.sendStatus(200);
     next()
 });
 
