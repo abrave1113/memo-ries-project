@@ -85,7 +85,7 @@ const handleChange = (e) => {
                                 {isSignup ? "Sign Up" : "Sign In"}
                     </Button>
                     <GoogleLogin 
-                        clientId="772704742460-v0akefcg2j5eo1esmnvl9v4nnbqdl85m.apps.googleusercontent.com"
+                        clientId="772704742460-s13iedht3no0sma4f1rmrkcj2tarcasd.apps.googleusercontent.com"
                         render={(renderProps) => (
                             <Button className={classes.googleButton} color='primary' fullWidth  onClick={renderProps.onClick}  disabled={renderProps.disabled} startIcon={<Icon />}  variant="contained" >
                                     Google Sign In
